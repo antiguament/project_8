@@ -1,0 +1,206 @@
+#!/bin/bash
+
+# --------------------------------------------------
+# Script mejorado para crear componentes Laravel
+# Características:
+# 1. Validación mejorada de nombres
+# 2. Estructura moderna con Vite
+# 3. Plantillas más completas
+# 4. Soporte para TypeScript opcional
+# 5. Integración automática con Vite
+# 6. Mensajes de coloridos
+# --------------------------------------------------
+
+# Colores para mensajes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Verifica si se proporcionó un nombre para el componente
+if [ -z "$1" ]; then
+    echo -e "${RED}Error:${NC} Debes proporcionar un nombre para el componente."
+    echo -e "Uso: ${GREEN}$0 ${YELLOW}<NombreDelComponente>${NC} [--typescript]"
+    exit 1
+fi
+
+# Opción para TypeScript
+USE_TYPESCRIPT=false
+if [ "$2" == "--typescript" ]; then
+    USE_TYPESCRIPT=true
+    echo -e "${BLUE}Info:${NC} Creando componente con soporte para TypeScript"
+fi
+
+# Procesamiento del nombre del componente
+component_name=$1
+component_name_pascal=$(echo "$component_name" | sed -r 's/(^|-)([a-z])/\U\2/g')
+component_name_kebab=$(echo "$component_name" | tr '[:upper:]' '[:lower:]' | sed -r 's/ /-/g')
+component_name_snake=$(echo "$component_name" | tr '[:upper:]' '[:lower:]' | sed -r 's/ /_/g')
+
+# Rutas de archivos
+class_path="app/View/Components/${component_name_pascal}.php"
+view_path="resources/views/components/${component_name_kebab}.blade.php"
+css_path="resources/css/components/${component_name_kebab}.css"
+js_path="resources/js/components/${component_name_kebab}.$( [ "$USE_TYPESCRIPT" = true ] && echo "ts" || echo "js" )"
+
+# Configuración de Vite
+vite_config="vite.config.js"
+
+# --------------------------------------------------
+# 1. Crear la clase del componente
+# --------------------------------------------------
+
+mkdir -p "app/View/Components"
+
+cat <<EOF > "$class_path"
+<?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class $component_name_pascal extends Component
+{
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // Propiedades del componente pueden ir aquí
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
+     */
+    public function render()
+    {
+        return view('components.$component_name_kebab');
+    }
+}
+EOF
+
+echo -e "${GREEN}✔${NC} Clase del componente creada: ${YELLOW}$class_path${NC}"
+
+# --------------------------------------------------
+# 2. Crear la vista del componente
+# --------------------------------------------------
+
+mkdir -p "resources/views/components"
+
+cat <<EOF > "$view_path"
+<div class="{{ \$attributes->merge(['class' => '$component_name_kebab']) }}">
+    {{-- Contenido del componente --}}
+    <h1>{{ \$slot }}</h1>
+    
+    @push('styles')
+        @vite(['resources/css/components/$component_name_kebab.css'])
+    @endpush
+
+    @push('scripts')
+        @vite(['resources/js/components/$component_name_kebab.$( [ "$USE_TYPESCRIPT" = true ] && echo "ts" || echo "js" )'])
+    @endpush
+</div>
+EOF
+
+echo -e "${GREEN}✔${NC} Vista del componente creada: ${YELLOW}$view_path${NC}"
+
+# --------------------------------------------------
+# 3. Crear archivo CSS
+# --------------------------------------------------
+
+mkdir -p "resources/css/components"
+
+cat <<EOF > "$css_path"
+.$component_name_kebab {
+    /* Estilos base del componente */
+    position: relative;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .$component_name_kebab {
+        /* Estilos para móviles */
+    }
+}
+EOF
+
+echo -e "${GREEN}✔${NC} Archivo CSS creado: ${YELLOW}$css_path${NC}"
+
+# --------------------------------------------------
+# 4. Crear archivo JavaScript/TypeScript
+# --------------------------------------------------
+
+mkdir -p "resources/js/components"
+
+if [ "$USE_TYPESCRIPT" = true ]; then
+    cat <<EOF > "$js_path"
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    mounted() {
+        console.log('Componente $component_name_pascal montado')
+        this.initComponent()
+    },
+    methods: {
+        initComponent() {
+            // Lógica de inicialización del componente
+            const element = document.querySelector('.${component_name_kebab}')
+            if (element) {
+                console.log('Elemento del componente encontrado')
+            }
+        }
+    }
+})
+EOF
+else
+    cat <<EOF > "$js_path"
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Componente $component_name_pascal cargado')
+    
+    const elements = document.querySelectorAll('.${component_name_kebab}')
+    
+    elements.forEach(element => {
+        // Lógica de inicialización del componente
+        console.log('Elemento del componente encontrado', element)
+    })
+})
+EOF
+fi
+
+echo -e "${GREEN}✔${NC} Archivo $( [ "$USE_TYPESCRIPT" = true ] && echo "TypeScript" || echo "JavaScript" ) creado: ${YELLOW}$js_path${NC}"
+
+# --------------------------------------------------
+# 5. Actualizar configuración de Vite (si existe)
+# --------------------------------------------------
+
+if [ -f "$vite_config" ]; then
+    # Buscar si el componente ya está registrado
+    if ! grep -q "'$css_path'" "$vite_config" && ! grep -q "'$js_path'" "$vite_config"; then
+        # Usar sed para insertar las nuevas rutas
+        sed -i "/input:/a \                '${css_path}',\n                '${js_path}'," "$vite_config"
+        echo -e "${GREEN}✔${NC} Configuración de Vite actualizada"
+    else
+        echo -e "${BLUE}ℹ${NC} El componente ya estaba registrado en Vite"
+    fi
+else
+    echo -e "${YELLOW}⚠${NC} No se encontró vite.config.js - asegúrate de registrar los archivos manualmente"
+fi
+
+# --------------------------------------------------
+# Mensaje final
+# --------------------------------------------------
+
+echo -e "\n${GREEN}¡Componente ${YELLOW}${component_name_pascal}${GREEN} creado con éxito!${NC}"
+echo -e "Puedes usarlo en tus vistas con:"
+echo -e "  ${BLUE}<x-${component_name_kebab}>${NC}Contenido${BLUE}</x-${component_name_kebab}>${NC}"
+
+if [ "$USE_TYPESCRIPT" = true ]; then
+    echo -e "\n${BLUE}Recordatorio:${NC} Asegúrate de tener configurado TypeScript en tu proyecto Laravel."
+fi
+
+echo -e "\n${YELLOW}Recomendación:${NC} Ejecuta ${GREEN}npm run dev${NC} para compilar los nuevos assets."

@@ -1,0 +1,107 @@
+
+    /* Animaciones */
+    @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    
+    @keyframes wave {
+        0% { transform: scaleX(1); }
+        50% { transform: scaleX(1.1); }
+        100% { transform: scaleX(1); }
+    }
+    
+    @keyframes fadeInUp {
+        from { 
+            opacity: 0; 
+            transform: translateY(15px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.1; }
+        50% { transform: scale(1.05); opacity: 0.15; }
+    }
+    
+    .animate-float {
+        animation: float 5s ease-in-out infinite;
+    }
+    
+    .animate-wave {
+        animation: wave 3s ease-in-out infinite;
+    }
+    
+    .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .animate-pulse {
+        animation: pulse 4s ease-in-out infinite;
+    }
+    
+    /* Estilos para el juego de emparejamiento */
+    .matching-card {
+        background-color: white;
+        border: 1px solid #4361ee;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        color: #3a0ca3;
+        font-size: 0.75rem;
+    }
+    
+    .matching-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .matching-card.selected {
+        background-color: #4cc9f0;
+        color: white;
+        border-color: #3a0ca3;
+    }
+    
+    .matching-card.correct {
+        background-color: #4ade80;
+        color: white;
+        border-color: #166534;
+    }
+    
+    .matching-card.incorrect {
+        background-color: #f87171;
+        color: white;
+        border-color: #991b1b;
+    }
+    
+    /* Estilos para las letras del alfabeto */
+    .alphabet-letter {
+        background-color: white;
+        border: 1px solid #4361ee;
+        border-radius: 0.25rem;
+        padding: 0.5rem 0.25rem;
+        font-size: 0.875rem;
+        font-weight: bold;
+        color: #3a0ca3;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .alphabet-letter:hover {
+        background-color: #4361ee;
+        color: white;
+        transform: scale(1.05);
+    }
+    
+    /* Mejor contraste para botones */
+    #check-answers {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+

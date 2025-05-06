@@ -1,0 +1,131 @@
+/* Animaciones y estilos base (mantener los anteriores) */
+
+/* Nuevos estilos para juegos mejorados */
+#sentence-scramble-area {
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+}
+
+.scramble-word {
+    background-color: white;
+    border: 2px solid #4fc3f7;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.2s;
+    font-weight: 500;
+    color: #01579b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scramble-word:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.scramble-word.placed {
+    background-color: #e1f5fe;
+    border-color: #0288d1;
+}
+
+#sentence-options {
+    min-height: 80px;
+}
+
+.quiz-option {
+    background-color: white;
+    border: 2px solid #b3e5fc;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    font-weight: 500;
+    color: #0277bd;
+}
+
+.quiz-option:hover {
+    background-color: #e1f5fe;
+    border-color: #4fc3f7;
+}
+
+.quiz-option.correct {
+    background-color: #e8f5e9;
+    border-color: #81c784;
+    color: #2e7d32;
+}
+
+.quiz-option.incorrect {
+    background-color: #ffebee;
+    border-color: #e57373;
+    color: #c62828;
+}
+
+.quiz-option.selected {
+    background-color: #bbdefb;
+    border-color: #0288d1;
+    font-weight: 600;
+}
+
+/* Estilos para la sección de diálogos */
+.dialogue-line {
+    transition: all 0.3s ease;
+}
+
+.dialogue-line.highlight {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.speaker {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.message {
+    position: relative;
+}
+
+.message:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #0288d1;
+    border-left: 8px solid transparent;
+}
+
+/* Efectos para feedback */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.correct-feedback {
+    animation: bounce 0.5s ease;
+}
+
+/* Indicador de progreso */
+.progress-container {
+    height: 6px;
+    background-color: #e1f5fe;
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 3px;
+    background-color: #0288d1;
+    transition: width 0.3s ease;
+}

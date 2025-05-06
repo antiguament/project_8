@@ -1,0 +1,75 @@
+.teaching-section {
+    @apply relative min-h-screen bg-cover bg-center bg-no-repeat;
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply text-white;
+}
+
+.teaching-section::before {
+    @apply absolute inset-0 bg-black bg-opacity-50;
+    content: '';
+}
+
+.teaching-content {
+    @apply relative z-10 max-w-7xl mx-auto;
+}
+
+.lesson-header {
+    @apply mb-12 text-center;
+}
+
+.lesson-badge {
+    @apply inline-block px-4 py-2 mb-4;
+    @apply text-sm font-bold uppercase tracking-widest;
+    @apply bg-blue-500 rounded-full;
+}
+
+.lesson-title {
+    @apply text-3xl md:text-4xl font-bold;
+    @apply mb-8;
+}
+
+.teaching-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply mb-6;
+}
+
+.teaching-subtitle {
+    @apply text-xl md:text-2xl;
+    @apply mb-8 max-w-3xl mx-auto;
+}
+
+.teaching-points {
+    @apply max-w-2xl mx-auto mb-12;
+}
+
+.teaching-point {
+    @apply flex items-start mb-4;
+    @apply text-lg;
+}
+
+.point-icon {
+    @apply mr-3 text-green-400 font-bold;
+}
+
+.teaching-video {
+    @apply my-12 aspect-video w-full max-w-4xl mx-auto;
+    @apply rounded-lg overflow-hidden shadow-xl;
+}
+
+.teaching-actions {
+    @apply text-center mt-12;
+}
+
+.teaching-button {
+    @apply inline-flex items-center px-8 py-4;
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium;
+    @apply rounded-full transition-all duration-300;
+}
+
+.button-icon {
+    @apply ml-2 transition-transform duration-300;
+}
+
+.teaching-button:hover .button-icon {
+    @apply transform translate-x-1;
+}
