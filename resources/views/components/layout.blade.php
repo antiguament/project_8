@@ -45,9 +45,7 @@
     <div class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <x-nav />
     </div>
-    <div class="container mx-auto px-4 pt-24"> <!-- Ajusta el padding-top para evitar superposición -->
-        <x-tab />
-    </div>
+   
    
 
 

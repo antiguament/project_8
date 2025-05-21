@@ -157,12 +157,12 @@
 
 <div class="eng-menu-container">
     <div class="eng-menu-header">
-        <h1 class="eng-menu-title">Curso de Inglés Básico</h1>
-        <p class="eng-menu-subtitle">Selecciona una categoría para aprender</p>
+        <h1 class="eng-menu-title">MENU GOURMET </h1>
+        <p class="eng-menu-subtitle">Selecciona tu mejor opcion</p>
     </div>
     
     <div class="eng-nav-menu">
-        <button class="eng-nav-btn active" data-target="section-greetings">Saludos</button>
+        <button class="eng-nav-btn active" data-target="section-greetings">Platos estrella</button>
         <button class="eng-nav-btn" data-target="section-introductions">Presentaciones</button>
         <button class="eng-nav-btn" data-target="section-personal-info">Información Personal</button>
         <button class="eng-nav-btn" data-target="section-alphabet">Alfabeto/Números</button>
@@ -178,12 +178,13 @@
     
     <!-- Secciones de contenido -->
     <div id="section-greetings" class="eng-content-section active">
-        <h2 class="eng-section-title">Saludos y Despedidas</h2>
+        <h2 class="eng-section-title">Platos ESTRELLA</h2>
         <div class="eng-section-content">
+        
         <x-secction-a1.a1-1a/>
+          <x-secction-a1.a1-1/>
                
-        <x-secction-a1.a1-1/>
-           
+          
         </div>
     </div>
     

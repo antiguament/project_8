@@ -3,7 +3,7 @@
       <!-- Logo y nombre de la aplicación -->
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="{{ asset('images/casa.png') }}" class="h-16" alt="Logo de la aplicación">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">INGLES.sancarloscomercio.com</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">AllALettera</span>
       </a>
 
       <!-- Botón de "Mi cuenta" y menú móvil -->

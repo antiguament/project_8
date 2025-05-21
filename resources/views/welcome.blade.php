@@ -9,6 +9,8 @@
 
 <x-inicio.inicio-1/>
 
+<x-inicio.inicio-4/>
+
 
 
 
