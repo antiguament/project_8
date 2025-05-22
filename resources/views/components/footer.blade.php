@@ -1,106 +1,101 @@
 <footer class="bg-white dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl">
       <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-        <!-- Columna 1: Niveles de Inglés -->
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">English Levels</h2>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Nuestro Menú</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">A1 (Beginner)</a>
+                    <a href="#" class="hover:underline">Entradas</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">A2 (Elementary)</a>
+                    <a href="#" class="hover:underline">Desayunos</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">B1 (Intermediate)</a>
+                    <a href="#" class="hover:underline">Pastas</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">B2 (Upper Intermediate)</a>
+                    <a href="#" class="hover:underline">Menú Especial</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">C1 (Advanced)</a>
+                    <a href="#" class="hover:underline">Menú Típico</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">C2 (Proficiency)</a>
+                    <a href="#" class="hover:underline">Pescados</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Asados</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Bebidas y Adiciones</a>
                 </li>
             </ul>
         </div>
-        
-        <!-- Columna 2: Recursos de Aprendizaje -->
+
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Learning Resources</h2>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sobre Nosotros</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Grammar Guides</a>
+                    <a href="#" class="hover:underline">Nuestra Historia</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Vocabulary Lists</a>
+                    <a href="#" class="hover:underline">Filosofía Culinaria</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Pronunciation Tips</a>
+                    <a href="#" class="hover:underline">Nuestro Equipo</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Practice Exercises</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Exam Preparation</a>
+                    <a href="#" class="hover:underline">Ingredientes Frescos</a>
                 </li>
             </ul>
         </div>
-        
-        <!-- Columna 3: Certificaciones -->
+
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Certifications</h2>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Servicios</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">TOEFL</a>
+                    <a href="#" class="hover:underline">Reservas</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">IELTS</a>
+                    <a href="#" class="hover:underline">Eventos Especiales</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Cambridge Exams</a>
+                    <a href="#" class="hover:underline">Servicio a Domicilio</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">TOEIC</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Test Preparation</a>
+                    <a href="#" class="hover:underline">Catering</a>
                 </li>
             </ul>
         </div>
-        
-        <!-- Columna 4: Contacto -->
+
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact & Support</h2>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contacto y Soporte</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">FAQ</a>
+                    <a href="#" class="hover:underline">Preguntas Frecuentes</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Tutoring Services</a>
+                    <a href="#" class="hover:underline">Ubicación</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Feedback</a>
+                    <a href="#" class="hover:underline">Teléfono: +57 123 4567</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Careers</a>
+                    <a href="#" class="hover:underline">Horarios</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Newsletter</a>
+                    <a href="#" class="hover:underline">Envíanos un Mensaje</a>
                 </li>
             </ul>
         </div>
       </div>
-      
-      <!-- Sección inferior con derechos y redes sociales -->
+
       <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
         <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-            © 2025 <a href="#" class="hover:underline">EnglishMaster Academy™</a>. All Rights Reserved.
+            © 2025 <a href="#" class="hover:underline">Restaurante allálettera™</a>. Todos los derechos reservados.
             <br class="sm:hidden">
-            <span class="block sm:inline mt-2 sm:mt-0">English learning platform for all levels.</span>
+            <span class="block sm:inline mt-2 sm:mt-0">Delicias caseras con el mejor sabor antioqueño.</span>
         </span>
-        
+
         <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white" aria-label="Facebook">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
