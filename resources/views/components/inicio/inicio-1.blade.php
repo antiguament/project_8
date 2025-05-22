@@ -1,4 +1,4 @@
-<section class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-24 relative overflow-hidden" style="background-image: url('{{ asset('images/imj_9.jpg') }}'); background-size: cover; background-position: center;">
+<section class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-24 relative overflow-hidden" style="background-image: url('{{ asset('images/imj_10.jpeg') }}'); background-size: cover; background-position: center;">
   <div class="absolute inset-0 bg-black opacity-25"></div>
   <div class="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
